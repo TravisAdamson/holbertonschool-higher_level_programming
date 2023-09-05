@@ -1,3 +1,4 @@
+#1/usr/bin/python3
 def main ():
     """This function prints a given statement using the print function"""
 
