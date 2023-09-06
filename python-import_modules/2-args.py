@@ -15,7 +15,7 @@ def main():
         print("0 arguements.")
     for i in sys.argv:
         if sys.argv.index(i) > 0:
-            print("{:d}: {:s}".format(sys.argv.index(i), i)
+            print("{:d}: {:s}".format(sys.argv.index(i), i))
 
 
 if __name__ == "__main__":
