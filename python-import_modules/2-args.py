@@ -4,6 +4,8 @@ import sys
 
 def main():
     num = len(sys.argv) - 1
+    if not argv[1]:
+        num = 0
     if num > 1:
         print("{:d} arguments:".format(num))
     elif num == 1:
