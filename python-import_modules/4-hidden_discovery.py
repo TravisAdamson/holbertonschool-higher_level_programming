@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import hidden_4
 
+
 def main():
     if len(dir(hidden_4)) > 0:
         for i in range(0, len(dir(hidden_4))):
