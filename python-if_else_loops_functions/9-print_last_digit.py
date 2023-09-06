@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 def print_last_digit(number):
-    if number > 9:
-        result = number % 10
-    elif number >= 0 and number < 10:
+    if number >= 0 and number < 10:
         result = number
+    elif number >= 10:
+        result = number % 10
     else:
-        result = (abs(number) % 10) * -1
+        result = abs(number) % 10
+    print("{d}".format(result))
     return result
