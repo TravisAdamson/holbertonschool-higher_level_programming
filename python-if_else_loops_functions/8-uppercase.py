@@ -6,4 +6,4 @@ def uppercase(str):
         else:
             ni = str[i]
         print("{}".format(ni), end="")
-print("\n", end="")
+    print()
