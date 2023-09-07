@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import variable_load_5 as temp
+from variable_load_5 import a
 
 
 def main():
-    print("{:d}".format(temp.a))
+    print("{:d}".format(a))
 
 
 if __name__ == "__main__":
