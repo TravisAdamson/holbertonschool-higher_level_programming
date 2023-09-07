@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import variable_load_5
+import variable_load_5 as temp
 
 
 def main():
-    var = getattr(variable_load_5, a)
+    var = temp.a
     print("{:d}".format(var))
 
 
