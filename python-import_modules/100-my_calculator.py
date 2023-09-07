@@ -4,20 +4,20 @@ from calculator_1 import add, sub, mul, div
 
 
 def main():
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     a = int(sys.argv[1])
     b = int(sys.argv[3])
     op = ord(sys.argv[2])
     if op == 43:
-        print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
+        print("{} + {} = {}".format(a, b, add(a, b)))
     elif op == 45:
-        print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
+        print("{} - {} = {}".format(a, b, sub(a, b)))
     elif op == 42:
-        print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
+        print("{} * {} = {}".format(a, b, mul(a, b)))
     elif op == 47:
-        print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
+        print("{} / {} = {}".format(a, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
