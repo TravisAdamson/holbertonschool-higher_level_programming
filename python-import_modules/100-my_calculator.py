@@ -9,15 +9,15 @@ def main():
         exit(1)
     a = int(sys.argv[1])
     b = int(sys.argv[3])
-    op = sys.argv[2]
-    if op == "+":
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, add(a, b)))
-    elif op == "-":
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, sub(a, b)))
-    elif op == "*":
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, mul(a, b)))
-    elif op == "/":
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, div(a, b)))
+    op = ord(sys.argv[2])
+    if op == 43:
+        print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
+    elif op == 45:
+        print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
+    elif op == 42:
+        print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
+    elif op == 47:
+        print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
