@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
 def print_list_integer(my_list=[]):
-    if my_list is not None:
+    if my_list is not None and type(my_list) == list:
         for i in my_list:
-            print("{:d}".str.format(i))
+            print("{:d}".format(i))
