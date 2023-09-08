@@ -10,13 +10,13 @@ def main():
     b = int(sys.argv[3])
     operator = ord(sys.argv[2])
     if operator == 43:
-        print("{} {} {} = {}".format(a, b, calculator_1.add(a, b)))
+        print("{} {} {} = {}".format(a, chr(operator), b, calculator_1.add(a, b)))
     elif operator == 45:
-        print("{} {} {} = {}".format(a, str(operator), b, calculator_1.sub(a, b)))
+        print("{} {} {} = {}".format(a, chr(operator), b, calculator_1.sub(a, b)))
     elif operator == 42:
-        print("{} {} {} = {}".format(a, str(operator), b, calculator_1.mul(a, b)))
+        print("{} {} {} = {}".format(a, chr(operator), b, calculator_1.mul(a, b)))
     elif operator == 47:
-        print("{} {} {} = {}".format(a, str(operator), b, calculator_1.div(a, b)))
+        print("{} {} {} = {}".format(a, chr(operator), b, calculator_1.div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
