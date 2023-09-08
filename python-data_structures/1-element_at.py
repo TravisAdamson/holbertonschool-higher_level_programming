@@ -3,6 +3,7 @@
 def element_at(my_list, idx):
     if idx < 0:
         return None
-    if len(my_list) < idx:
-        return None
-    return my_list[idx]
+    if my_list is not None and type(my_list) == list:
+        if len(my_list) < idx:
+            return None
+        return my_list[idx]
