@@ -8,14 +8,14 @@ def main():
         exit(1)
     a = int(sys.argv[1])
     b = int(sys.argv[3])
-    op = ord(sys.argv[2])
-    if op == 43:
+    operator = ord(sys.argv[2])
+    if operator == 43:
         print("{} + {} = {}".format(a, b, calculator_1.add(a, b)))
-    elif op == 45:
+    elif operator == 45:
         print("{} - {} = {}".format(a, b, calculator_1.sub(a, b)))
-    elif op == 42:
+    elif operator == 42:
         print("{} * {} = {}".format(a, b, calculator_1.mul(a, b)))
-    elif op == 47:
+    elif operator == 47:
         print("{} / {} = {}".format(a, b, calculator_1.div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
