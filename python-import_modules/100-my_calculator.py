@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import sys
-from calculator_1 import add, sub, mul, div
-
+import calculator_1
 
 def main():
     if len(sys.argv) != 4:
@@ -11,13 +10,13 @@ def main():
     b = int(sys.argv[3])
     op = ord(sys.argv[2])
     if op == 43:
-        print("{} + {} = {}".format(a, b, add(a, b)))
+        print("{} + {} = {}".format(a, b, calculator_1.add(a, b)))
     elif op == 45:
-        print("{} - {} = {}".format(a, b, sub(a, b)))
+        print("{} - {} = {}".format(a, b, calculator_1.sub(a, b)))
     elif op == 42:
-        print("{} * {} = {}".format(a, b, mul(a, b)))
+        print("{} * {} = {}".format(a, b, calculator_1.mul(a, b)))
     elif op == 47:
-        print("{} / {} = {}".format(a, b, div(a, b)))
+        print("{} / {} = {}".format(a, b, calculator_1.div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
