@@ -13,4 +13,4 @@ def uniq_add(my_list=[]):
             result += my_list[i]
             new_list.append(my_list[i])
         my_flag = 0
-    return new_list
+    return result
