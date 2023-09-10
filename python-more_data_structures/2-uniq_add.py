@@ -3,6 +3,8 @@
 def uniq_add(my_list=[]):
     if my_list is None:
         return 0
+    if len(my_list) == 0:
+        return 0
     new_list = []
     new_list.append(my_list[0])
     result = my_list[0]
