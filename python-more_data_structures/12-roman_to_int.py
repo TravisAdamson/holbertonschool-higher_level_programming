@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def get_dec_value(tv):
+    if tv == 'I':
         return 1
     if tv == 'V':
         return 5
