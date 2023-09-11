@@ -27,8 +27,12 @@ def roman_to_int(roman_string):
     temp_2 = 0
     for i in range(len(roman_string)):
         temp_1 = get_dec_value(roman_string[i])
+        if temp_1 == -1:
+            return 0
         if i + 1 < len(roman_string):
             temp_2 = get_dec_value(roman_string[i + 1])
+            if temp_2 == -1:
+                return 0
             if temp_1 < temp_2:
                 conv_value += temp_2 - temp_1
                 i += 1
