@@ -13,14 +13,10 @@ class Square:
         Args:
             size (int): The size of said new square.
         """
-        if type(size) != int:
-            try:
-                raise TypeError
-            except TypeError as te:
-                print("size must be an integer")
-        if size < 0:
-            try:
-                raise ValueError
-            except ValueError as ve:
-                print("size must be >= 0")
-        size.__size = size
+        if type(size) == int:
+            if size >= 0:
+                self.__size = size
+            else:
+                raise ValueError("size must be >= 0")
+        else:
+            raise TypeError("size must be an integer")
