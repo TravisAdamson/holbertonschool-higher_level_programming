@@ -56,10 +56,14 @@ class Square:
             self (square): The given square.
             value (tuple): The position to set
         """
-        if len(value) == 2 and all(x > 0 for x in value):
-            self.__position = value
+        err_msg = "position must be a tuple of 2 positive integers"
+        if len(value) == 2:
+            if value[1] >= 0 and value[2] >= 0:
+                self.__position = value
+            else:
+                raise TypeError(err_msg)
         else:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError(err_msg)
 
     def area(self):
         """Calculates the area of the given square
@@ -77,7 +81,7 @@ class Square:
         if self.__size > 0:
             if self.__position[0] > 0:
                 for i in range(self.__size):
-                    for sp in range(self.__position[0] - 1):
+                    for sp in range(self.__position[0]):
                         print(" ", end="")
                     for j in range(self.__size):
                         print("#", end="")
