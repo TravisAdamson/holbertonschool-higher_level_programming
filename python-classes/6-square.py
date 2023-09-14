@@ -57,13 +57,10 @@ class Square:
             value (tuple): The position to set
         """
         err_msg = "position must be a tuple of 2 positive integers"
-        if len(value) != 2:
-            raise TypeError(err_msg)
-        if not isinstance(value, tuple):
-            raise TypeError(err_msg)
-        if not all(isinstance(val, int) for val in value):
-            raise TypeError(err_msg)
-        if not all(val >= 0 for val in value):
+        if (not isinstance(value, tuple) or
+                len(value) !=2 or
+                not all(isinstance(val, int) for val in value) or
+                any(val < 0 for val in value)):
             raise TypeError(err_msg)
         self.__position = value
 
