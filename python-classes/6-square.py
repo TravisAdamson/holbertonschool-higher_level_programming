@@ -60,7 +60,7 @@ class Square:
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(val, int) for val in value) or
-                any(val < 0 for val in value)):
+                not all(val >= 0 for val in value)):
             raise TypeError(err_msg)
         self.__position = value
 
@@ -77,18 +77,20 @@ class Square:
         Args:
             self (square): The square to rpint
         """
-        if self.__size > 0:
-            if self.__position[0] > 0:
-                for i in range(self.__size):
-                    for sp in range(self.__position[0]):
-                        print(" ", end="")
-                    for j in range(self.__size):
-                        print("#", end="")
-                    print()
-            else:
-                for i in range(self.__size):
-                    for j in range(self.__size):
-                        print("#", end="")
-                    print()
-        else:
+        if self.__size == 0:
+            print("")
+            return
+        for i in range(self.__position[1]):
             print()
+        if self.__position[0] > 0:
+            for i in range(self.__size):
+                for sp in range(self.__position[0]):
+                    print(" ", end="")
+                for j in range(self.__size):
+                    print("#", end="")
+                print()
+        else:
+            for i in range(self.__size):
+                for j in range(self.__size):
+                    print("#", end="")
+                print()
