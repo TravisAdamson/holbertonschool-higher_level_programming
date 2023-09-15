@@ -3,6 +3,7 @@
 # Travis Adamson
 """ Defines a function to add two integers """
 
+
 def add_integer(a, b=98):
     """Returns the result of adding integers a and b.
 
