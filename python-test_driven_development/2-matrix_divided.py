@@ -14,7 +14,7 @@ def matrix_divided(matrix, div):
     """
     te_msg_a = "matrix must be a matrix (list of lists) of integers/floats"
     te_msg_b = "div must be a number"
-    te_msg_c = "Each row of th matrix must have the same size"
+    te_msg_c = "Each row of the matrix must have the same size"
     if type(div) != int and type(div) != float:
         raise TypeError(te_msg_b)
     if div == 0:
