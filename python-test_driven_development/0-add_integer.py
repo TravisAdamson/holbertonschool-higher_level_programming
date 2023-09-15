@@ -12,10 +12,10 @@ def add_integer(a, b=98):
     Raises:
         TypeError: if a or b are not float or int
     """
-    te_msg_a = "TypeError: a must be an integer"
-    te_msg_b = "TypeError: b must be an integer"
-    oe_msg = "OverflowError: cannot convert float infinity to integer"
-    ve_msg = "ValueError: cannot convert float NaN to integer"
+    te_msg_a = "a must be an integer"
+    te_msg_b = "b must be an integer"
+    oe_msg = "cannot convert float infinity to integer"
+    ve_msg = "cannot convert float NaN to integer"
     if type(a) == float:
         try:
             a = int(a)

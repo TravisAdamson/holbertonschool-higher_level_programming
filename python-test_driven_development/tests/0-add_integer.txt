@@ -34,39 +34,39 @@ Possible Errors to be raised:
 The function will not accept any non-numeric value, and will raise a TypeError.
 
 	>>> add_integer("School", 3)
-	TypeError: a must be an integer
+	a must be an integer
 
 	>>> add_integer(3, "Testing")
-	TypeError: b must be an integer
+	b must be an integer
 
 	>>> add_integer(None)
-	TypeError: a must be an integer
+	a must be an integer
 
 	>>> add_integer(9.1, None)
-	TypeError: b must be an integer
+	b must be an integer
 
 The function will also not accept a numeric value, if it is passed as a string.
 
 	>>> add_integer(1, "2")
-	TypeError: b must be an integer
+	b must be an integer
 
 If both arguements are not valid values, then the TypeError will be for a
 
 	>>> add_integer("School", "Testing")
-	TypeError: a must be an integer
+	a must be an integer
 
 The function will also throw an OverflowError if 'inf' is passed and attempted to convert to float, in either argument.
 
 	>>> add_integer(float('inf'))
-	OverflowError: cannot convert float infinity to integer
+	cannot convert float infinity to integer
 
 	>>> add_integer(1, float('inf'))
-	OverflowError: cannot convert float infinity to integer
+	cannot convert float infinity to integer
 
 The 'NaN' values will produce a ValueError as well if passed in either position.
 
 	>>> add_integer(float('nan'))
-	ValueError: cannot convert float NaN to integer
+	cannot convert float NaN to integer
 
 	>>> add_integer(3, float('nan'))
-	ValueError: cannot convert float NaN to integer
+	cannot convert float NaN to integer
