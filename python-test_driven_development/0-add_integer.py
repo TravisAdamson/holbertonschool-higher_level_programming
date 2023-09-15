@@ -45,5 +45,5 @@ def add_integer(a, b=98):
             raise TypeError
         except TypeError as te:
             print(te_msg_b)
-            return None
+            return
     return a + b
