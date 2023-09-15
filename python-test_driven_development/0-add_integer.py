@@ -16,33 +16,8 @@ def add_integer(a, b=98):
     te_msg_b = "b must be an integer"
     oe_msg = "cannot convert float infinity to integer"
     ve_msg = "cannot convert float NaN to integer"
-    if type(a) == float:
-        try:
-            a = int(a)
-        except OverflowError as oe:
-            print(oe_msg)
-            return None
-        except ValueError as ve:
-            print(ve_msg)
-            return None
-    if type(b) == float:
-        try:
-            b = int(b)
-        except OverflowError as oe:
-            print(oe_msg)
-            return None
-        except ValueError as ve:
-            print(ve_msg)
-            return None
-    if type(a) != int:
-        try:
-            raise TypeError
-        except TypeError as te:
-            print(te_msg_a)
-            return None
-    if type(b) != int:
-        try:
-            raise TypeError
-        except TypeError as te:
-            raise TypeError(te_msg_b)
-    return a + b
+    if type(a) != int and type(a) != float:
+        raise TypeError(te_msg_a)
+    if type(b) != int and type(b) != float:
+        raise TypeError(te_msg_b)
+    return int(a) + int(b)
