@@ -1,0 +1,67 @@
+# 0-add_integer.txt
+# Travis Adamson
+
+===============================
+Doctesting for 0-add_integer.py
+===============================
+
+General Purpose of Function:
+
+add_integer(...) returns the sum of the two arguments passed (uses the + operator).
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(8,3)
+	11
+
+	>>> add_integer(4, -7)
+	-3
+
+The function can also use floating point values, after they are cast into ints before calculation
+
+	>>> add_integer(4.0, 8.0)
+	12
+
+	>>> add_integer(5.1, -6.8)
+	-1
+
+The second arguement defaults to 98 if it is not provided, thus it is optional.
+
+	>>> add_integer(1)
+	99
+
+Possible Errors to be raised:
+
+The function will not accept any non-numeric value, and will raise a TypeError.
+
+	>>> add_integer("School", 3)
+	TypeError: a must be an integer
+
+	>>> add_integer(3, "Testing")
+	TypeError: b must be an integer
+
+	>>> add_integer(None)
+	TypeError: a must be an integer
+
+	>>> add_integer(9.1, None)
+	TypeError: b must be an integer
+
+If both arguements are not valid values, then the TypeError will be for a
+
+	>>> add_integer("School", "Testing")
+	TypeError: a must be an integer
+
+The function will also throw an OverflowError if 'inf' is passed and attempted to convert to float, in either argument.
+
+	>>> add_integer(float('inf'))
+	OverflowError: cannot convert float infinity to integer
+
+	>>> add_integer(1, float('inf'))
+	OverflowError: cannot convert float infinity to integer
+
+The 'NaN' values will produce a ValueError as well if passed in either position.
+
+	>>> add_integer(float('nan'))
+	ValueError: cannot convert float NaN to integer
+
+	>>> add_integer(3, float('nan'))
+	ValueError: cannot convert float NaN to integer
