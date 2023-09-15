@@ -45,6 +45,11 @@ The function will not accept any non-numeric value, and will raise a TypeError.
 	>>> add_integer(9.1, None)
 	TypeError: b must be an integer
 
+The function will also not accept a numeric value, if it is passed as a string.
+
+	>>> add_integer(1, "2")
+	TypeError: b must be an integer
+
 If both arguements are not valid values, then the TypeError will be for a
 
 	>>> add_integer("School", "Testing")
