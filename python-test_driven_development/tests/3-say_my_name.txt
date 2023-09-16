@@ -1,0 +1,48 @@
+# 3-say_my_name.txt
+# Travis Adamson
+
+===================================
+Doctesting for 3-say_my_name.py
+===================================
+
+General Purpose of Function:
+
+Prints "My name is " + first_name + last_name
+
+say_my_name takes two arguments that both must be string values:
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("Travis", "Adamson")
+	My name is Travis Adamson
+
+last_name is optional, and will default to "" if not passed:
+
+	>>> say_my_name("Travis")
+	My name is Travis 
+
+either value can also be a string of more than one word:
+
+	>>> say_my_name("Travis Ryan", "Adamson Sr.")
+	My name is Travis Ryan Adamson Sr.
+
+Possible Errors:
+
+if either value is not a string, it will raise a TypeError:
+
+	>>> say_my_name(5, "Adamson")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> say_my_name("Travis", 5)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name(10)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+If both values are passed as non-strings, will give first_name error:
+
+	>>> say_my_name(5, 8)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
