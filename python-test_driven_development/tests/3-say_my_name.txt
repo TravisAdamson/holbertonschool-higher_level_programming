@@ -25,6 +25,11 @@ either value can also be a string of more than one word:
 	>>> say_my_name("Travis Ryan", "Adamson Sr.")
 	My name is Travis Ryan Adamson Sr.
 
+If both values are empty strings, will process without raising any errors:
+
+	>>> say_my_name("", "")
+	My name is  
+
 Possible Errors:
 
 if either value is not a string, it will raise a TypeError:
