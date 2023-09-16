@@ -32,6 +32,12 @@ If both values are empty strings, will process without raising any errors:
 
 Possible Errors:
 
+If both arguments are missing it will raise a TypeError for first_name:
+
+	>>> say_my_name(None, None)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
 if either value is not a string, it will raise a TypeError:
 
 	>>> say_my_name(5, "Adamson")
