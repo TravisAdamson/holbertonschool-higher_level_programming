@@ -15,7 +15,7 @@ def text_indentation(text):
     te_msg = "text must be a string"
     if type(text) != str:
         raise TypeError(te_msg)
-    if text == None:
+    if text is None:
         raise TypeError(te_msg)
     flag = 0
     for i in text:
