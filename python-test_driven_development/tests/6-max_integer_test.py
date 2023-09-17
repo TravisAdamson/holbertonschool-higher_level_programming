@@ -8,7 +8,7 @@ import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
-class Max_Integer_Test(unittest.Testcase):
+class Max_Integer_Test(unittest.TestCase):
     """Define unittests for max_integer([..])."""
 
     def unsorted_list_test(self):
