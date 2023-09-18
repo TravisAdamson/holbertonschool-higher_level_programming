@@ -7,7 +7,6 @@
 class Rectangle:
     """This is an empty class to define Rectangle"""
 
-
     def __int__(self, width=0, height=0):
         """Intializes a new "Rectangle".
 
@@ -18,7 +17,6 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-
 
     @property
     def width(self):
@@ -37,7 +35,7 @@ class Rectangle:
             self (Rectangle): The Rectangle to get the height of.
         """
         return (self.__height)
-    
+
     @width.setter
     def width(self, value):
         """Sets the width of the Rectangle
