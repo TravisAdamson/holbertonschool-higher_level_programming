@@ -102,6 +102,6 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 rectangle_like.append('#')
-                if i != self.__height - 1:
+                if j != self.__width - 1:
                     rectangle_like.append("\n")
         return ("".join(rectangle_like))
