@@ -102,7 +102,7 @@ class Rectangle:
 
     def bigger_or_equal(rect_1, rect_2):
         """Finds the bigger rectangle based on area.
-        
+
         Args:
             rect_1 (Rectangle): First to compare
             rect_2 (Rectangle): Second to compare
