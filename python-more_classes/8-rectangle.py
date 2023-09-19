@@ -106,6 +106,8 @@ class Rectangle:
         Args:
             rect_1 (Rectangle): First to compare
             rect_2 (Rectangle): Second to compare
+        Raises:
+            TypeError: If either values are not a Rectangle.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
