@@ -115,4 +115,3 @@ class Rectangle:
     def __del__(self):
         """Detects any Rectangle being deleted and prints a message"""
         print("Bye rectangle...")
-
