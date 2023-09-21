@@ -11,7 +11,7 @@ Adds a sorted print method to the existing class: list
 
 Usage examples:
 
-	>>> MyList = __import('1-my_list').MyList
+	>>> MyList = __import__('1-my_list').MyList
 	>>> my_list = MyList()
 	>>> type(my_list)
 	<class '1-my_list.MyList'>
@@ -40,11 +40,11 @@ Edited using an index:
 
 	>>> my_list[0] = 10
 	>>> print(my_list)
-	[10, 2, 5]
+	[10, 1, 5]
 
 The remove method demonstrated:
 
-	>>> my_list.remove(2)
+	>>> my_list.remove(1)
 	>>> print(my_list)
 	[10, 5]
 
@@ -93,7 +93,7 @@ If more than one argument is given during instantiation a TypeError is raised:
 
 	>>> my_list = MyList([3, 2], [8, 10])
 	Traceback (most recent call last):
-	TypeError: list() takes at most 1 argument (2 given)
+	TypeError: list expected at most 1 argument, got 2
 
 If the argument is not an iterable object a TypeError is raised:
 
@@ -104,13 +104,13 @@ If the argument is not an iterable object a TypeError is raised:
 print_sorted will not accept any arguments:
 
 	>>> my_list = MyList([1, 2, 3])
-	>>> my_list.print_sorted(anything)
+	>>> my_list.print_sorted(1)
 	Traceback (most recent call last):
 	TypeError: print_sorted() takes 1 positional argument but 2 were given
 
 If the list has different types, print sorted will raise a TypeError:
 
-	>>> my_list = MyList(["Bob", 10, "David"]
+	>>> my_list = MyList(["Bob", 10, "David"])
 	>>> my_list.print_sorted()
 	Traceback (most recent call last):
-	TypeError: unorderable types: str() < int()
+	TypeError: '<' not supported between instances of 'int' and 'str'
