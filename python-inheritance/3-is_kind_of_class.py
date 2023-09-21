@@ -4,7 +4,7 @@
 """ Defines a function to determine if obj matches the class """
 
 
-def is_same_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """Determines if obj is of class a_class (exactly or inherited)
 
     Args:
