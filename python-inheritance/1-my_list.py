@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # 1-my_list.py
 # Travis Adamson
-""" Defines a class MyList that inherits from list """
+""" Defines a class MyList that inherits list """
 
 
 class MyList(list):
