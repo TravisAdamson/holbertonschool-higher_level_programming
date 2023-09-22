@@ -12,4 +12,4 @@ def write_file(filename="", text=""):
         text (string): The text to write to the file
     """
     with open(filename, "w", encoding="utf-8") as cur_file:
-            cur_file.write(text)
+            return (cur_file.write(text))
