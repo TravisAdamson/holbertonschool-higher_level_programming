@@ -11,6 +11,5 @@ def write_file(filename="", text=""):
         filename (file): The file to write to.
         text (string): The text to write to the file
     """
-    if filename != "" and text != "":
-        with open(filename, "w", encoding="utf-8") as cur_file:
+    with open(filename, "w", encoding="utf-8") as cur_file:
             cur_file.write(text)
