@@ -64,6 +64,16 @@ If value is less than 0 a ValueError is raised:
 	Traceback (most recent call last):
 	TypeError: one last time, it must be an integer
 
+Both name and value must be passed to integer_validator:
+
+	>>> base_geo.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	>>> base_geo.integer_validator("Nothing")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
 No arguements can be passed to BaseGeometry:
 
 	>>> base_geo = BaseGeometry(None)
