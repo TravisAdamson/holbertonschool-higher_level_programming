@@ -28,9 +28,10 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError(ve_msg)
 
+
 class Rectangle(BaseGeometry):
     """Defines a class Rectangle that inherits BaseGeometry"""
-    
+
     def __init__(self, width, height):
         """Initializes an object of Rectangle
 
