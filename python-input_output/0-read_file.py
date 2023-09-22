@@ -10,6 +10,7 @@ def read_file(filename=""):
     Args:
         filename (file): The file to read and print.
     """
-    with open(filename, "r") as cur_file:
-        content = cur_file.read()
-        print(content)
+    if filename != "":
+        with open(filename, "r") as cur_file:
+            content = cur_file.read()
+            print(content)
