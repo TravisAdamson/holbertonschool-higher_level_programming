@@ -11,6 +11,6 @@ def read_file(filename=""):
         filename (file): The file to read and print.
     """
     if filename != "":
-        with open(filename, "r") as cur_file:
+        with open(filename, "r", encoding="utf-8") as cur_file:
             content = cur_file.read()
             print(content)
