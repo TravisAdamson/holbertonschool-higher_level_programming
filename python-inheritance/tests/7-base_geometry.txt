@@ -14,7 +14,7 @@ Usage examples:
 	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 	>>> base_geo = BaseGeometry()
 	>>> type(base_geo)
-	<class '1-base_geometry.BaseGeometry'>
+	<class '7-base_geometry.BaseGeometry'>
 
 Area should raise an Exception due to not being implemented:
 
