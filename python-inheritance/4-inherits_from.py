@@ -5,18 +5,15 @@
 
 
 def inherits_from(obj, a_class):
-    """Determines if obj inherits from a_class
+    """Determines if obj inherits a_class
 
     Args:
         obj (any): The given object to check
-        a_class (any): The class to compare to
+        a_class (type): The class to compare to
 
     Returns: True if inherits otherwise False
     """
-    if isinstance(obj, a_class):
-        if issubclass(obj.__class__, a_class):
-            return True
-        else:
-            return False
+    if issubclass(type(obj), a_class) and type(obj) != a_class:
+        return True
     else:
         return False
