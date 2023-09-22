@@ -1,0 +1,41 @@
+# 7-base_geometry.txt
+# Travis Adamson
+
+===================================
+Doctesting for 7-base_geometry.py
+===================================
+
+General Purpose of Class: BaseGeometry
+
+Creates a base class to build off.
+
+Usage examples:
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> base_geo = BaseGeometry()
+	>>> type(base_geo)
+	<class '1-base_geometry.BaseGeometry'>
+
+Area should raise an Exception due to not being implemented:
+
+	>>> base_geo.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+integer_validator(...) makes sure that the parameter is an integer.
+
+If value is a valid integer nothing happens
+	>>> base_geo.integer_validator("valid number", 1)
+
+If value is not an integer, a TypeError is raised:
+
+	>>> base_geo.integer_validator("invalid number", "number")
+	Traceback (most recent call last):
+	TypeError: invalid number must be an integer
+
+
+If value is less than 0 a ValueError is raised:
+
+	>>> base_geo.integer_validator("invalid", -1)
+	Traceback (most recent call last):
+	ValueError: invalid must be greater than 0
