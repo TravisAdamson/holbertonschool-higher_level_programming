@@ -6,10 +6,10 @@ Rectangle = __import__('9-Rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """Defines a class Rectangle that inherits BaseGeometry"""
+    """Defines a class Square that inherits Rectangle"""
 
     def __init__(self, size):
-        """Initializes an object of Rectangle
+        """Initializes an object of Square
 
         Args:
             size (int): The size of the object
