@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-# 1-write_file.py
+# 2-append_write.py
 # Travis Adamson
 """ Defines a function to append to a file """
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """Appends the given text to the given file
 
     Args:
