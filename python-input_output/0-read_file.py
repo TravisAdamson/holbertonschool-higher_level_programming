@@ -12,5 +12,4 @@ def read_file(filename=""):
     """
     if filename != "":
         with open(filename, encoding="utf-8") as cur_file:
-            content = cur_file.read()
-            print(content)
+            print(cur_file.read(), end="")
