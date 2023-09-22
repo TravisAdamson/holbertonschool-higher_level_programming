@@ -60,7 +60,7 @@ If value is less than 0 a ValueError is raised:
 	Traceback (most recent call last):
 	TypeError: again, it must be an integer
 
-	>>> base_geo.integer_validator("one last time,", None)
+	>>> base_geo.integer_validator("one last time, it", None)
 	Traceback (most recent call last):
 	TypeError: one last time, it must be an integer
 
@@ -68,6 +68,6 @@ No arguements can be passed to BaseGeometry:
 
 	>>> base_geo = BaseGeometry(None)
 	Traceback (most recent call last):
-	TypeError: object() takes no parameters
+	TypeError: BaseGeometry() takes no arguments
 
 
