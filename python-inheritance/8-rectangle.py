@@ -7,18 +7,6 @@
 class BaseGeometry:
     """This is an empty class to define BaseGeometry"""
 
-    def __init__(self, width, height):
-        """Initializes an object of BaseGeometry
-
-        Args:
-            width (int): The width of the object
-            height (int): The height of the object
-        Validates both width and height using integer validator
-        """
-        if integer_validator(width) and integer_validator(height):
-            self.__width = width
-            self.__height = height
-
     def area(self):
         """ Not impletemented"""
         raise Exception("area() is not implemented")
@@ -39,3 +27,19 @@ class BaseGeometry:
             raise TypeError(te_msg)
         if value <= 0:
             raise ValueError(ve_msg)
+
+class Rectangle(BaseGeometry):
+    """Defines a class Rectangle that inherits BaseGeometry"""
+    
+    def __init__(self, width, height):
+        """Initializes an object of Rectangle
+
+        Args:
+            width (int): The width of the object
+            height (int): The height of the object
+        Validates both width and height using integer validator
+        """
+        self.integer_validator("width", width)
+        self.__width = width
+        self.integer_validator("height", height)
+        self.__height = height
