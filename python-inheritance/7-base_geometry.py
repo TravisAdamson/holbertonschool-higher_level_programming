@@ -8,8 +8,10 @@ class BaseGeometry:
     """This is an empty class to define BaseGeometry"""
 
     def area(self):
-        """ Not impletemented"""
-        raise Exception("area() is not implemented")
+        """Calculates the area of the object"""
+        self.integer_validator("width", self.__width)
+        self.integer_validator("height", self.__height)
+        return (self.__width * self.__height)
 
     def integer_validator(self, name, value):
         """Validates an integer
