@@ -2,7 +2,7 @@
 # 9-rectangle.py
 # Travis Adamson
 """ Define a class "Rectangle" using "BaseGeometry". """
-Rectangle = __import__('9-Rectangle').Rectangle
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
