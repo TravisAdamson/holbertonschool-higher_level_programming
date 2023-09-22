@@ -30,5 +30,5 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         """Returns the printable version of the object"""
         str_rectangle = "[Rectangle] " + str(self.__width)
-        str_rectangle += "/" + str(self.__height)       
+        str_rectangle += "/" + str(self.__height) 
         return str_rectangleuuu
