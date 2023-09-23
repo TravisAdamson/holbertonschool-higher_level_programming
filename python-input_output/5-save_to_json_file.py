@@ -12,6 +12,5 @@ def save_to_json_file(my_obj, filename):
         my_obj (object): The Object to convert
         filename (string): The name of file to use
     """
-    json_string = json.dumps(my_obj)
-    with open(filename, "a") as cur_file:
-        return (cur_file.write(json_string))
+    with open(filename, "w") as cur_file:
+        json.dump(my_obj, cur_file)
