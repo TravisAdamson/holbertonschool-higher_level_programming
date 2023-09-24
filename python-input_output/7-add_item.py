@@ -15,4 +15,4 @@ try:
 except FileNotFoundError as fnf:
     new_list = []
 new_list.append(sys.argv[1:])
-save_to_json_file(items, "add_item.json")
+save_to_json_file(new_list, "add_item.json")
