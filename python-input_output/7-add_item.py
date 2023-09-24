@@ -14,5 +14,5 @@ try:
     new_list = load_from_json_file("add_item.json")
 except FileNotFoundError as fnf:
     new_list = []
-new_list.extend(sys.argv[1:])
+new_list.append(sys.argv[1:])
 save_to_json_file(items, "add_item.json")
