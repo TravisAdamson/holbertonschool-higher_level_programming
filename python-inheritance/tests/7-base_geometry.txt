@@ -1,3 +1,13 @@
+===================================
+Doctesting for 7-base_geometry.py
+===================================
+
+General Purpose of Class: BaseGeometry
+
+Creates a base class to build off.
+
+Usage examples:
+
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 >>> type(bg)
