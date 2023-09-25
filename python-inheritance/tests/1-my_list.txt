@@ -60,6 +60,9 @@ made unsorted list:
 >>> my_list.print_sorted()
 [1, 2, 4, 8, 16]
 
+>>> print(my_list)
+[1, 8, 4, 2, 16]
+
 >>> my_list = MyList()
 >>> my_list.print_sorted()
 []
