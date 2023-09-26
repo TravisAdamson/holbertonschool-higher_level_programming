@@ -82,4 +82,10 @@ TypeError: Tuples must be an integer
 Traceback (most recent call last):
 ValueError: Negatives must be greater than 0
 
+-----Arguments cannot be sent BaseGeometry----
+
+>>> base_geometry = BaseGeometry(None)
+Traceback (most recent call last):
+TypeError: BaseGeometry() takes no arguments
+
 =====End=====
