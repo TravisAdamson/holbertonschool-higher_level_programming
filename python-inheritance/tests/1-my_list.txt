@@ -1,88 +1,116 @@
-#1-my_list.txt
-#Logan Savage
+# 1-my_list.txt
+# Travis Adamson
 
-====================
-DocTest for 1-mylist
-====================
+===================================
+Doctesting for 1-my_list.py
+===================================
 
------importing function and class------
+General Purpose of Class: MyList
 
->>> MyList = __import__('1-my_list').MyList
->>> my_list = MyList()
->>> type(my_list)
-<class '1-my_list.MyList'>
+Adds a sorted print method to the existing class: list
 
+Usage examples:
 
------Testing-----
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> type(my_list)
+	<class '1-my_list.MyList'>
 
----Regular---
+Printing the empty list:
 
-Empty list:
->>> print(my_list)
-[]
+	>>> print(my_list)
+	[]
 
-Single list:
->>> my_list = MyList([1, 3, 5])
->>> print(my_list)
-[1, 3, 5]
+Creating the object with a single list:
 
-Index replace:
->>> my_list[0] = 7
->>> print(my_list)
-[7, 3, 5]
+	>>> my_list = MyList([4, 5, 6])
+	>>> print(my_list)
+	[4, 5, 6]
 
-Removing from list:
->>> my_list.remove(3)
->>> print(my_list)
-[7, 5]
+Because MyList inherits from list, list methods can be used:
 
-List of Strings:
->>> my_list = MyList(["This", "is", "a", "test"])
->>> print(my_list)
-['This', 'is', 'a', 'test']
+	>>> my_list = MyList()
+	>>> my_list.append(8)
+	>>> my_list.append(1)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[8, 1, 5]
 
-Sorting list:
->>> my_list.print_sorted()
-['This', 'a', 'is', 'test']
+Edited using an index:
 
-Appending to list:
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append(3)
->>> my_list.append(2)
->>> print(my_list)
-[1, 3, 2]
+	>>> my_list[0] = 10
+	>>> print(my_list)
+	[10, 1, 5]
 
-Making an unsorted list:
->>> my_list = MyList([4, 6, 3, 2, 12, 9])
+The remove method demonstrated:
 
->>> print(my_list)
-[4, 6, 3, 2, 12, 9]
->>> my_list.print_sorted()
-[2, 3, 4, 6, 9, 12]
->>> print(my_list)
-[4, 6, 3, 2, 12, 9]
+	>>> my_list.remove(1)
+	>>> print(my_list)
+	[10, 5]
 
-Sorting an empty list:
->>> my_list = MyList()
->>> my_list.print_sorted()
-[]
+Now demonstrating the print_sorted method:
 
----Incorrect Inputs---
+	>>> my_list = MyList()
+	>>> print(my_list.print_sorted)
+	<bound method MyList.print_sorted of []>
 
-Multiple Arguments:
->>> my_list = MyList([1, 2], [4, 5])
-Traceback (most recent call last):
-TypeError: list expected at most 1 argument, got 2
+Creating an unsorted list:
 
-Sorting different types:
->>> my_list = MyList(["Hello", 256, "Float"])
+	>>> my_list = MyList([1, 8, 4, 2, 16])
+	>>> print(my_list)
+	[1, 8, 4, 2, 16]
 
->>> my_list.print_sorted()
-Traceback (most recent call last):
-TypeError: '<' not supported between instances of 'int' and 'str'
+Sorting the list:
 
-Removing items not in list:
->>> my_list.remove(9)
-Traceback (most recent call last):
-ValueError: list.remove(x): x not in list
+	>>> my_list.print_sorted()
+	[1, 2, 4, 8, 16]
+
+The original list is not modified:
+
+	>>> print(my_list)
+	[1, 8, 4, 2, 16]
+
+Also works with sorting string values:
+
+	>>> my_list = MyList(["Matt", "Travis", "Logan", "Eric"])
+	>>> print(my_list)
+	['Matt', 'Travis', 'Logan', 'Eric']
+
+Sorted: 
+
+	>>> my_list.print_sorted()
+	['Eric', 'Logan', 'Matt', 'Travis']
+
+If the list is empty will print an empty list:
+
+	>>> my_list = MyList()
+	>>> my_list.print_sorted()
+	[]
+
+Possible Errors:
+
+If more than one argument is given during instantiation a TypeError is raised:
+
+	>>> my_list = MyList([3, 2], [8, 10])
+	Traceback (most recent call last):
+	TypeError: list expected at most 1 argument, got 2
+
+If the argument is not an iterable object a TypeError is raised:
+
+	>>> my_list = MyList(None)
+	Traceback (most recent call last):
+	TypeError: 'NoneType' object is not iterable
+
+print_sorted will not accept any arguments:
+
+	>>> my_list = MyList([1, 2, 3])
+	>>> my_list.print_sorted(1)
+	Traceback (most recent call last):
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+If the list has different types, print sorted will raise a TypeError:
+
+	>>> my_list = MyList(["Bob", 10, "David"])
+	>>> my_list.print_sorted()
+	Traceback (most recent call last):
+	TypeError: '<' not supported between instances of 'int' and 'str'
