@@ -79,5 +79,3 @@ No arguements can be passed to BaseGeometry:
 	>>> base_geo = BaseGeometry(None)
 	Traceback (most recent call last):
 	TypeError: BaseGeometry() takes no arguments
-
-
