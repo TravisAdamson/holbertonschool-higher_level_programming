@@ -1,83 +1,71 @@
-# 7-base_geometry.txt
-# Travis Adamson
+# 7-is_same_class.py
+# Matthew Ernst 6628@holbertonstudents.com
 
-===================================
-Doctesting for 7-base_geometry.py
-===================================
+=============================
+integer_validator(self, name, value)
+==============================
 
-General Purpose of Class: BaseGeometry
+=====Successful Functions=====
 
-Creates a base class to build off.
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> base_geometry = BaseGeometry()
 
-Usage examples:
+--------Regular--------
 
-	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-	>>> base_geo = BaseGeometry()
-	>>> type(base_geo)
-	<class '7-base_geometry.BaseGeometry'>
+>>> base_geometry.integer_validator("notaninteger", 12)
 
-Area should raise an Exception due to not being implemented:
+=====UnSuccessfull=====
 
-	>>> base_geo.area()
-	Traceback (most recent call last):
-	Exception: area() is not implemented
+#>>> base_geometry.integer_validator(11, 12b)
+#Traceback (most recent call last):
+#SyntaxError: invalid decimal literal
 
-integer_validator(...) makes sure that the parameter is an integer.
+------Value is not an integer------
 
-If value is a valid integer nothing happens
+>>> base_geometry.integer_validator("notaninteger!", "notaninteger!")
+Traceback (most recent call last):
+TypeError: notaninteger! must be an integer
 
-	>>> base_geo.integer_validator("valid number", 1)
+------not enough args------
 
-If value is not an integer, a TypeError is raised:
+>>> base_geometry.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-	>>> base_geo.integer_validator("invalid number", "number")
-	Traceback (most recent call last):
-	TypeError: invalid number must be an integer
+------Value is missing------
 
-If value is less than 0 a ValueError is raised:
+>>> base_geometry.integer_validator(None)
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-	>>> base_geo.integer_validator("invalid", -1)
-	Traceback (most recent call last):
-	ValueError: invalid must be greater than 0
+------Value is <= 0------
 
-	>>> base_geo.integer_validator("It", 0)
-	Traceback (most recent call last):
-	ValueError: It must be greater than 0
+>>> base_geometry.integer_validator("bob", -12)
+Traceback (most recent call last):
+ValueError: bob must be greater than 0
 
-	>>> base_geo.integer_validator("still", True)
-	Traceback (most recent call last):
-	TypeError: still must be an integer
+------Area------
 
-	>>> base_geo.integer_validator("even tuples", (1,))
-	Traceback (most recent call last):
-	TypeError: even tuples must be an integer
+>>> base_geometry.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
 
-	>>> base_geo.integer_validator("I said it", [1])
-	Traceback (most recent call last):
-	TypeError: I said it must be an integer
+------T or F------
 
-	>>> base_geo.integer_validator("again, it", {1, 2})
-	Traceback (most recent call last):
-	TypeError: again, it must be an integer
+>>> base_geometry.integer_validator("age", False)
+Traceback (most recent call last):
+TypeError: age must be an integer
 
-	>>> base_geo.integer_validator("one last time, it", None)
-	Traceback (most recent call last):
-	TypeError: one last time, it must be an integer
+------Tuple------
 
-Both name and value must be passed to integer_validator:
+>>> base_geometry.integer_validator("notaninteger", {8, 9})
+Traceback (most recent call last):
+TypeError: notaninteger must be an integer
 
-	>>> base_geo.integer_validator()
-	Traceback (most recent call last):
-	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+------Lists?------
 
-	>>> base_geo.integer_validator("Nothing")
-	Traceback (most recent call last):
-	TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> base_geometry.integer_validator("itsalist", [1])
+Traceback (most recent call last):
+TypeError: itsalist must be an integer
 
-No arguements can be passed to BaseGeometry:
-
-	>>> base_geo = BaseGeometry(None)
-	Traceback (most recent call last):
-	TypeError: BaseGeometry() takes no arguments
-
-
+=====End=====
