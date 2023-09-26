@@ -78,9 +78,9 @@ TypeError: Nothing at all must be an integer
 Traceback (most recent call last):
 TypeError: Tuples must be an integer
 
------Negative-----
+-----Zero-----
 
->>> base_geometry.integer_validator("Negatives", -4)
+>>> base_geometry.integer_validator("Negatives", 0)
 Traceback (most recent call last):
 ValueError: Negatives must be greater than 0
 
