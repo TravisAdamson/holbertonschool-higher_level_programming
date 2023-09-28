@@ -125,7 +125,7 @@ class Rectangle(Base):
                 elif count == 3:
                     self.x = argument
                 elif count == 4:
-                    self.y == argument
+                    self.y = argument
                 count += 1
 
     def __str__(self):
