@@ -70,7 +70,7 @@ class Square(Rectangle):
                     self.x = value
                 elif key == "y":
                     self.y = value
-    
+
     def __str__(self):
         """Return the rep of square for print() and str()"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
