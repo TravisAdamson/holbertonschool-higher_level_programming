@@ -99,6 +99,35 @@ class Rectangle(Base):
                 print("#", end="")
             print("")
 
+    def update(self, *args):
+        """Update the Rectangle:
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument is id attribute
+                - 2nd argument is width attribute
+                - 3rd argument is height attribute
+                - 4th argument is x attribute
+                - 5th argument is y attribute
+        """
+        if args and len(args) != 0:
+            count = 0
+            for argument in args:
+                if count == 0:
+                    if argument is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = argument
+                elif count == 1:
+                    self.width = argument
+                elif count == 2:
+                    self.height = argument
+                elif count == 3:
+                    self.x = argument
+                elif count == 4:
+                    self.y == argument
+                count += 1
+
     def __str__(self):
         """Returns the print() and str() rep of rectangle"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
