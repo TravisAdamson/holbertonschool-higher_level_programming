@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-# test_base.py
+# test_rectangle.py
 # Travis Adamson
-"""Describes the unittests for base.py file"""
+"""Describes the unittests for rectangle.py file"""
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
@@ -173,7 +173,7 @@ class TestRectangle_width(unittest.TestCase):
 
 
 class TestRectangle_height(unittest.TestCase):
-    """Unittests for intialization of Rectangles width"""
+    """Unittests for intialization of Rectangles height"""
 
     def test_None_height(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
@@ -249,7 +249,7 @@ class TestRectangle_height(unittest.TestCase):
 
 
 class TestRectangle_x(unittest.TestCase):
-    """Unittests for intialization of Rectangles width"""
+    """Unittests for intialization of Rectangles x value"""
 
     def test_None_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
@@ -321,7 +321,7 @@ class TestRectangle_x(unittest.TestCase):
 
 
 class TestRectangle_y(unittest.TestCase):
-    """Unittests for intialization of Rectangles width"""
+    """Unittests for intialization of Rectangles y value"""
 
     def test_None_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
@@ -418,3 +418,26 @@ class TestRectangle_order(unittest.TestCase):
     def test_x_before_y(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle(1, 2, "inv x", "inv y")
+
+
+class TestRectangle_area(unittest.TestCase):
+    """Unittests for testing Rectangles area method"""
+
+    def test_area_smaller(self):
+        rect1 = Rectangle(20, 3, 0, 0, 0)
+        self.assertEqual(60, rect1.area())
+
+    def test_area_larger(self):
+        rect1 = Rectangle(1000000000, 3, 0, 0, 0)
+        self.assertEqual(3000000000, rect1.area())
+
+    def test_area_changed_values(self):
+        rect1 = Rectangle(20, 10, 0, 0, 0)
+        rect1.width = 10
+        rect1.height = 5
+        self.assertEqual(50, rect1.area())
+
+    def test_area_with_arg(self):
+        rect1 = Rectangle(10, 10, 0, 0, 0)
+        with self.assertRaises(TypeError):
+            rect1.area(10)
