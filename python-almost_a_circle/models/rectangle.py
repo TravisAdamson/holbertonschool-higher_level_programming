@@ -99,7 +99,7 @@ class Rectangle(Base):
                 print("#", end="")
             print("")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the Rectangle:
 
         Args:
@@ -109,6 +109,7 @@ class Rectangle(Base):
                 - 3rd argument is height attribute
                 - 4th argument is x attribute
                 - 5th argument is y attribute
+            **kwargs (dict): New pairs of atributes using key/value
         """
         if args and len(args) != 0:
             count = 0
@@ -127,6 +128,22 @@ class Rectangle(Base):
                 elif count == 4:
                     self.y = argument
                 count += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
 
     def __str__(self):
         """Returns the print() and str() rep of rectangle"""
