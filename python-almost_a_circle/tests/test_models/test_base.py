@@ -129,10 +129,10 @@ class TestBase_to_json_string(unittest.TestCase):
         self.assertTrue(len(Base.to_json_string(list_dictionaries)) == 78)
 
     def test_to_json_string_empty_list(self):
-        self.assertEqual([], Base.to_json_string([]))
+        self.assertEqual("[]", Base.to_json_string([]))
 
     def test_to_json_string_none(self):
-        self.assertEqual([], Base.to_json_string(None))
+        self.assertEqual("[]", Base.to_json_string(None))
 
     def test_to_json_string_no_arguments(self):
         with self.assertRaises(TypeError):
@@ -140,7 +140,7 @@ class TestBase_to_json_string(unittest.TestCase):
 
     def test_to_json_string_too_many_arguments(self):
         with self.assertRaises(TypeError):
-            Base.to_json_string([], 10)
+            Base.to_json_string("[]", 10)
 
 
 class TestBase_from_json_string(unittest.TestCase):
@@ -183,10 +183,10 @@ class TestBase_from_json_string(unittest.TestCase):
         self.assertEqual(list_in, list_out)
 
     def test_from_json_string_none(self):
-        self.assertEqual([], Base.from_json_string(None))
+        self.assertEqual("[]", Base.from_json_string(None))
 
     def test_from_json_string_empty(self):
-        self.assertEqual([], Base.from_json_string("[]"))
+        self.assertEqual("[]", Base.from_json_string("[]"))
 
     def test_from_json_string_no_arguments(self):
         with self.assertRaises(TypeError):
