@@ -299,7 +299,7 @@ class TestBase_save_to_file(unittest.TestCase):
         sq1 = Square(5, 2, 2, 1)
         Base.save_to_file([sq1])
         with open("Base.json", "r") as file:
-            fr = len(file.read())    
+            fr = len(file.read())
         self.assertTrue(fr == 38)
 
     def test_save_to_file_overwrite_file(self):
@@ -312,6 +312,11 @@ class TestBase_save_to_file(unittest.TestCase):
 
     def test_save_to_file_None(self):
         Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual("[]", file.read())
+
+    def test_save_to_file_empty_list(self):
+        Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertEqual("[]", file.read())
 
@@ -362,7 +367,7 @@ class TestBase_load_from_file(unittest.TestCase):
         rect2 = Rectangle(10, 2, 3, 3, 2)
         Rectangle.save_to_file([rect1, rect2])
         list_rect_out = Rectangle.load_from_file()
-        self.assertTrue(all(type(ob) == Rectangle for ob in list_rect_out))
+        self.assertTrue(all(type(ob) is Rectangle for ob in list_rect_out))
 
     def test_load_from_file_one_square(self):
         sq1 = Square(5, 2, 2, 1)
@@ -383,7 +388,7 @@ class TestBase_load_from_file(unittest.TestCase):
         sq2 = Square(10, 2, 3, 2)
         Square.save_to_file([sq1, sq2])
         list_sq_out = Square.load_from_file()
-        self.assertTrue(all(type(ob) == Square for ob in list_sq_out))
+        self.assertTrue(all(type(ob) is Square for ob in list_sq_out))
 
     def test_load_from_file_no_file(self):
         out = Square.load_from_file()

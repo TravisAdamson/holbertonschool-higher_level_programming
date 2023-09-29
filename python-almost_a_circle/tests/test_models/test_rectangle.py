@@ -484,7 +484,6 @@ class TestRectangle_output(unittest.TestCase):
     # Test __str__ method first
     def test_str_print_width_height(self):
         rect1 = Rectangle(5, 2)
-        cap = TestRectangle_output.capture_out(rect1, "print")
         correct_result = "[Rectangle] ({}) 0/0 - 5/2".format(rect1.id)
         self.assertEqual(correct_result, rect1.__str__())
 
