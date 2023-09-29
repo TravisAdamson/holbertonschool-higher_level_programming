@@ -1,7 +1,20 @@
 #!/usr/bin/python3
 # test_square.py
 # Travis Adamson
-"""Describes the unittests for square.py file"""
+"""Describes the unittests for square.py file
+
+Unittest classes:
+    TestSquare_instantiation - line
+    TestSquare_size - line
+    TestSquare_x - line
+    TestSquare_y - line
+    TestSquare_order - line
+    TestSquare_area - line
+    TestSquare_output - line
+    TestSquare_update_args - line
+    TestSquare_update_kwargs - line
+    TestSquare_to_dictionary - line
+"""
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
@@ -152,7 +165,7 @@ class TestSquare_size(unittest.TestCase):
             Square(-10)
 
     def test_zero_size(self):
-        with self.assertRaiseRegex(ValueError, "size must be > 0"):
+        with self.assertRaisesRegex(ValueError, "size must be > 0"):
             Square(0)
 
 
@@ -304,11 +317,11 @@ class TestSquare_order(unittest.TestCase):
     """Unittests for testing Square order of attribute initialization."""
 
     def test_size_before_x(self):
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+        with self.assertRaisesRegex(TypeError, "size must be an integer"):
             Square("inv size", "inv x")
 
     def test_size_before_y(self):
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+        with self.assertRaisesRegex(TypeError, "size must be an integer"):
             Square("inv size", 3, "inv y")
 
     def test_x_before_y(self):
@@ -320,16 +333,16 @@ class TestSquare_area(unittest.TestCase):
     """Unittests for testing Square area"""
 
     def test_area_smaller(self):
-        self.assertEqual(200, Square(20, 0, 0, 1).area())
+        self.assertEqual(400, Square(20, 0, 0, 1).area())
 
     def test_area_larger(self):
         sq1 = Square(1000000000, 0, 0, 1)
-        self.assertEqual(4000000000, sq1.area())
+        self.assertEqual(1000000000000000000, sq1.area())
 
     def test_area_changed_size(self):
         sq1 = Square(10, 0, 0, 1)
         sq1.size = 5
-        self.assertEqual(20, sq1.area())
+        self.assertEqual(25, sq1.area())
 
     def test_area_with_arg(self):
         sq1 = Square(10, 0, 0, 1)
