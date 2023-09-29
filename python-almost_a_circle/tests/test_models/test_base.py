@@ -387,7 +387,7 @@ class TestBase_load_from_file(unittest.TestCase):
 
     def test_load_from_file_no_file(self):
         out = Square.load_from_file()
-        self.assertEqual([], out)
+        self.assertEqual("[]", out)
 
     def test_load_from_file_too_many_arguments(self):
         with self.assertRaises(TypeError):
