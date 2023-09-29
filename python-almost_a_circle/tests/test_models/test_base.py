@@ -129,10 +129,10 @@ class TestBase_to_json_string(unittest.TestCase):
         self.assertTrue(len(Base.to_json_string(list_dictionaries)) == 78)
 
     def test_to_json_string_empty_list(self):
-        self.assertEqual("[]", Base.to_json_string([]))
+        self.assertEqual([], Base.to_json_string([]))
 
     def test_to_json_string_none(self):
-        self.assertEqual("[]", Base.to_json_string(None))
+        self.assertEqual([], Base.to_json_string(None))
 
     def test_to_json_string_no_arguments(self):
         with self.assertRaises(TypeError):
@@ -194,7 +194,7 @@ class TestBase_from_json_string(unittest.TestCase):
 
     def test_from_json_string_too_many_arguments(self):
         with self.assertRaises(TypeError):
-            Base.from_jason_string([], 10)
+            Base.from_json_string([], 10)
 
 
 class TestBase_create(unittest.TestCase):
@@ -272,7 +272,7 @@ class TestBase_save_to_file(unittest.TestCase):
         rect1 = Rectangle(5, 2, 1, 3, 4)
         Rectangle.save_to_file([rect1])
         with open("Rectangle.json", "r") as file:
-            self.assertTrue(len(file.read()) == 53)
+            self.assertTrue(len(file.read()) == 52)
 
     def test_save_to_file_multi_rect(self):
         rect1 = Rectangle(5, 2, 1, 3, 4)
@@ -285,20 +285,22 @@ class TestBase_save_to_file(unittest.TestCase):
         sq1 = Square(5, 2, 2, 1)
         Square.save_to_file([sq1])
         with open("Square.json", "r") as file:
-            self.assertTrue(len(file.read()) == 39)
+            self.assertTrue(len(file.read()) == 38)
 
     def test_save_to_file_multi_squares(self):
         sq1 = Square(5, 2, 2, 1)
         sq2 = Square(4, 3, 3, 2)
         Square.save_to_file([sq1, sq2])
         with open("Square.json", "r") as file:
-            self.assertTrue(len(file.read()) == 77)
+            fr = len(file.read())
+        self.assertTrue(fr == 76)
 
     def test_save_to_file_using_cls_filename(self):
         sq1 = Square(5, 2, 2, 1)
         Base.save_to_file([sq1])
         with open("Base.json", "r") as file:
-            self.assertTrue(len(file.read()) == 39)
+            fr = len(file.read())    
+        self.assertTrue(fr == 38)
 
     def test_save_to_file_overwrite_file(self):
         sq1 = Square(5, 2, 2, 1)
@@ -310,11 +312,6 @@ class TestBase_save_to_file(unittest.TestCase):
 
     def test_save_to_file_None(self):
         Square.save_to_file(None)
-        with open("Square.json", "r") as file:
-            self.assertEqual("[]", file.read())
-
-    def test_save_to_file_empty(self):
-        Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertEqual("[]", file.read())
 

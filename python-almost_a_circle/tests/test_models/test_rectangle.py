@@ -184,7 +184,7 @@ class TestRectangle_width(unittest.TestCase):
             Rectangle(-10, 20)
 
     def test_zero_width(self):
-        with self.assertRaiseRegex(ValueError, "width must be > 0"):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Rectangle(0, 20)
 
 
@@ -260,7 +260,7 @@ class TestRectangle_height(unittest.TestCase):
             Rectangle(10, -20)
 
     def test_zero_height(self):
-        with self.assertRaiseRegex(ValueError, "height must be > 0"):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle(20, 0)
 
 
@@ -485,27 +485,27 @@ class TestRectangle_output(unittest.TestCase):
     def test_str_print_width_height(self):
         rect1 = Rectangle(5, 2)
         cap = TestRectangle_output.capture_out(rect1, "print")
-        correct_result = "[Rectangle] ({}) 0/0 - 5/2\n".format(rect1.id)
+        correct_result = "[Rectangle] ({}) 0/0 - 5/2".format(rect1.id)
         self.assertEqual(correct_result, rect1.__str__())
 
     def test_str_width_height(self):
         rect1 = Rectangle(5, 2)
-        correct_result = "[Rectangle] ({}) 0/0 - 5/2\n".format(rect1.id)
+        correct_result = "[Rectangle] ({}) 0/0 - 5/2".format(rect1.id)
         self.assertEqual(correct_result, rect1.__str__())
 
     def test_str_width_height_x(self):
         rect1 = Rectangle(5, 2, 3)
-        correct_result = "[Rectangle] ({}) 3/0 - 5/2\n".format(rect1.id)
+        correct_result = "[Rectangle] ({}) 3/0 - 5/2".format(rect1.id)
         self.assertEqual(correct_result, rect1.__str__())
 
     def test_str_width_height_x_y(self):
         rect1 = Rectangle(5, 2, 3, 1)
-        correct_result = "[Rectangle] ({}) 3/1 - 5/2\n".format(rect1.id)
+        correct_result = "[Rectangle] ({}) 3/1 - 5/2".format(rect1.id)
         self.assertEqual(correct_result, rect1.__str__())
 
     def test_str_width_height_x_y_id(self):
         rect1 = Rectangle(5, 2, 3, 1, 8)
-        correct_result = "[Rectangle] (8) 3/1 - 5/2\n"
+        correct_result = "[Rectangle] (8) 3/1 - 5/2"
         self.assertEqual(correct_result, rect1.__str__())
 
     def test_str_changed_attrib(self):
@@ -569,12 +569,12 @@ class TestRectangle_update_args(unittest.TestCase):
     def test_update_args_three(self):
         rect1 = Rectangle(20, 20, 20, 20, 20)
         rect1.update(10, 2, 3)
-        self.assertEqual("[Rectangle] (10) 10/10 - 2/3", str(rect1))
+        self.assertEqual("[Rectangle] (10) 20/20 - 2/3", str(rect1))
 
     def test_update_args_four(self):
         rect1 = Rectangle(20, 20, 20, 20, 20)
         rect1.update(10, 2, 3, 4)
-        self.assertEqual("[Rectangle] (10) 4/10 - 2/3", str(rect1))
+        self.assertEqual("[Rectangle] (10) 4/20 - 2/3", str(rect1))
 
     def test_update_args_five(self):
         rect1 = Rectangle(20, 20, 20, 20, 20)
@@ -595,7 +595,7 @@ class TestRectangle_update_args(unittest.TestCase):
     def test_update_args_None_id_and_more(self):
         rect1 = Rectangle(20, 20, 20, 20, 20)
         rect1.update(None, 3, 4, 3)
-        correct = "[Rectangle] ({}) 3/10 - 3/4".format(rect1.id)
+        correct = "[Rectangle] ({}) 3/20 - 3/4".format(rect1.id)
         self.assertEqual(correct, str(rect1))
 
     def test_update_args_twice(self):
@@ -696,12 +696,12 @@ class TestRectangle_update_kwargs(unittest.TestCase):
     def test_update_kwargs_two(self):
         rect1 = Rectangle(20, 20, 20, 20, 20)
         rect1.update(width=2, id=1)
-        self.assertEqual("[Rectangle] (1) 10/10 - 2/10", str(rect1))
+        self.assertEqual("[Rectangle] (1) 20/20 - 2/20", str(rect1))
 
     def test_update_kwargs_three(self):
         rect1 = Rectangle(20, 20, 20, 20, 20)
         rect1.update(width=2, height=3, id=10)
-        self.assertEqual("[Rectangle] (10) 10/10 - 2/3", str(rect1))
+        self.assertEqual("[Rectangle] (10) 20/20 - 2/3", str(rect1))
 
     def test_update_kwargs_four(self):
         rect1 = Rectangle(20, 20, 20, 20, 20)
@@ -784,7 +784,7 @@ class TestRectangle_update_kwargs(unittest.TestCase):
     def test_update_args_and_kwargs(self):
         rect1 = Rectangle(20, 20, 20, 20, 20)
         rect1.update(10, 2, height=4, y=6)
-        self.assertEqual("[Rectangle] (10) 20/20 – 2/20", str(rect1))
+        self.assertEqual("[Rectangle] (10) 20/20 - 2/20", str(rect1))
 
     def test_update_kwargs_wrong_keys(self):
         rect1 = Rectangle(20, 20, 20, 20, 20)
