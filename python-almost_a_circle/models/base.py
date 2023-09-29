@@ -42,7 +42,7 @@ class Base:
             Empty list or object represented by the string
         """
         if json_string is None or json_string == "[]":
-            return "[]"
+            return []
         return json.loads(json_string)
 
     @classmethod

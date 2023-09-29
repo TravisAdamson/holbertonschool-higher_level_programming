@@ -183,10 +183,10 @@ class TestBase_from_json_string(unittest.TestCase):
         self.assertEqual(list_in, list_out)
 
     def test_from_json_string_none(self):
-        self.assertEqual("[]", Base.from_json_string(None))
+        self.assertEqual([], Base.from_json_string(None))
 
     def test_from_json_string_empty(self):
-        self.assertEqual("[]", Base.from_json_string("[]"))
+        self.assertEqual([], Base.from_json_string("[]"))
 
     def test_from_json_string_no_arguments(self):
         with self.assertRaises(TypeError):
