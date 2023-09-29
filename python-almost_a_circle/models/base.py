@@ -29,7 +29,7 @@ class Base:
             list_dictionaries (list): A list of dictionaries
         """
         if list_dictionaries is None or list_dictionaries == []:
-            return []
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @staticmethod
@@ -42,7 +42,7 @@ class Base:
             Empty list or object represented by the string
         """
         if json_string is None or json_string == "[]":
-            return []
+            return "[]"
         return json.loads(json_string)
 
     @classmethod
