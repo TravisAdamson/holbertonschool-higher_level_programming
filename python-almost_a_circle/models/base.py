@@ -90,4 +90,4 @@ class Base:
                 list_dictionaries = Base.from_json_string(json_file.read())
                 return [cls.create(**d) for d in list_dictionaries]
         except IOError:
-            return "[]"
+            return []
