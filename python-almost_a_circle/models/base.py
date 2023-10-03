@@ -45,8 +45,8 @@ class Base:
         if dictionary:
             if cls.__name__ == "Rectangle":
                 instance = cls(3, 3)
-            if cls.__name__ == "Square":
-                instance = instance(3)
+            else:
+                instance = cls(3)
             instance.update(**dictionary)
             return instance
 
