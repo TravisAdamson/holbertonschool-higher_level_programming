@@ -51,14 +51,18 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instace with all attributes set"""
-        if dictionary:
+        """Return a class created from dictionary of attribs
+
+        Args:
+            **dictionary (dict): Key/value pairs for attibs for init
+        """
+        if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
-                instance = cls(3, 3)
+                new = cls(1, 1)
             else:
-                instance = cls(3)
-            instance.update(**dictionary)
-            return instance
+                new = cls(1)
+            new.update(**dictionary)
+            return new
 
     def load_from_file(cls):
         """Returns a list of classes created from json strings
