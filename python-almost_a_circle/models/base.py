@@ -4,11 +4,15 @@ import json
 
 
 class Base:
-    """Base class representation Testingstufff"""
+    """Describes a new class: Basee"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """The constructor method"""
+        """Initializes a new class:
+
+        Args:
+            id (int): The id to assign to this obj
+        """
         if id is not None:
             self.id = id
         else:
@@ -69,6 +73,7 @@ class Base:
             new.update(**dictionary)
             return new
 
+    @classmethod
     def load_from_file(cls):
         """Returns a list of classes created from json strings
 
