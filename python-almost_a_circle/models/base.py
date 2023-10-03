@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 import json
-"""Base class module"""
+"""Base class module creation stuffsfsfsfsf"""
 
 
 class Base:
-    """Base class repr"""
+    """Base class representation Testingstufff"""
     __nb_objects = 0
 
     def __init__(self, id=None):
