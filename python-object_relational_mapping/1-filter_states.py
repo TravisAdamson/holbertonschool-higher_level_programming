@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Contains MySQLdb script that gets states starting with 'N'"""
+""" Contains MySQLdb script that prints states starting with 'N'"""
 import MySQLdb
 import sys
 
