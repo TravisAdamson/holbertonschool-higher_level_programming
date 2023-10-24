@@ -14,7 +14,7 @@ if __name__ == "__main__":
                    ORDER BY cities.id ASC;
                    ''')
 
-    states = cursor.fetchall()
+    cities = cursor.fetchall()
 
     for city in cities:
         print(city)
