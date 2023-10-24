@@ -15,12 +15,12 @@ if __name__ == "__main__":
             '''
     c.execute(query)
 
-    cities = cursor.fetchall()
+    cities = c.fetchall()
 
     for city in cities: 
         if city[4] == argv[4]:
             print_cities = city[2]
     print(', '.join(print_cities))
 
-    cursor.close()
+    c.close()
     db.close()
