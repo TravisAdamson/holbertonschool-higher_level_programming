@@ -8,10 +8,12 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
 
-    queery = '''SELECT cities.id, cities.name, states.name FROM cities 
-                JOIN states ON cities.state_id = states.id 
-                ORDER BY cities.id'''
-    c.execute(queery)
+    query = '''SELECT *
+            FROM cities
+            JOIN states ON cities.state_id = states.id
+            ORDER BY cities.id ASC;
+            '''
+    c.execute(query)
 
     cities = cursor.fetchall()
 
