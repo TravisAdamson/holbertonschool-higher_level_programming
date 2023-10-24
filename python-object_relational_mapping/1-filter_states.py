@@ -1,19 +1,27 @@
 #!/usr/bin/python3
-""" Contains MySQLdb script that prints states starting with 'N'"""
+# 1-filter_states.py
+# Ethan Zalta
+"""Lists all states where name starts with N"""
 import MySQLdb
-import sys
+from sys import argv
 
-if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3])
-    cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    states = cursor.fetchall()
+def show_state_n():
+    """Shows all states that begin with 'N'"""
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], database=argv[3])
+    c = db.cursor()
 
-    for state in states:
+    c.execute("SELECT * FROM states ORDER BY id;")
+    all_data = c.fetchall()
+
+    for state in all_data:
         if state[1][0] == 'N':
             print(state)
 
-    cursor.close()
+    c.close()
     db.close()
+
+
+if __name__ == "__main__":
+    show_state_n()
