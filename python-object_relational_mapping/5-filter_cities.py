@@ -19,6 +19,6 @@ if __name__ == "__main__":
 
     p_cities = [city[2] for city in cities if city[4] == sys.argv[4]]
     print(', '.join(p_cities))
-    
+
     c.close()
     db.close()
