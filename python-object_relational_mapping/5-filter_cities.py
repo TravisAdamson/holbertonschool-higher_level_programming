@@ -17,9 +17,10 @@ if __name__ == "__main__":
 
     cities = cursor.fetchall()
 
-    for city in cities:
-        if city[4] == sys.argv[4]
-            print(', '.join(city[2]))
+    for city in cities: 
+        if city[4] == argv[4]:
+            print_cities = city[2]
+    print(', '.join(print_cities))
 
     cursor.close()
     db.close()
