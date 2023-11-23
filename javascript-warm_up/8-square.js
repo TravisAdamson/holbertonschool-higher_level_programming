@@ -6,10 +6,9 @@ if (isNaN(zeroInt)) {
 } else {
   for (let i = 0; i < zeroInt; i++) {
     let thisLine = '';
-    for (let j = 0; j < zeroInt - 1; j++) {
-      thisLine += 'x';
+    for (let j = 0; j < zeroInt; j++) {
+      thisLine += 'X';
     }
-    thisLine += 'x';
     console.log(thisLine);
   }
 }
