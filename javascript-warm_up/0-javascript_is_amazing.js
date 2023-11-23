@@ -1,3 +1,3 @@
 #!/usr/bin/node
-const the_phrase = 'Javascript is amazing';
-console.log(the_phrase);
+const thePhrase = 'Javascript is amazing';
+console.log(thePhrase);
