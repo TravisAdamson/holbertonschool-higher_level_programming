@@ -11,3 +11,5 @@ function add (a, b) {
     console.log(intResult);
   }
 }
+
+add();
